@@ -1,0 +1,16 @@
+<div id="create-account">
+    <h1>Sign Up</h1>
+    <p>Already have an account?<a href="/users/signIn">Click here to login</a></p>
+</div>
+
+<form action="/users/create" method="POST">
+    <input type="text" name="FirstName" placeholder="First Name">
+    <input type="text" name="LastName" placeholder="Last Name">
+    <input type="email" name="email" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="confirm_password" placeholder="Password">
+    <button>Sign Up</button>
+
+</form>
+
+<h3><a href="/users/forgot-password">Forgot your password</a></h3>
