@@ -1,1 +1,17 @@
 This is profile page
+<a href="/users/destroy-session">Sign out</a>
+<% if(locals.user) {%>
+    <a href="/users/destroy-session">Sign out</a>
+<%}%>
+
+<% if(locals.user) {%>
+    <p>Name : <%= user.FirstName %> <%= user.LastName %></p>
+<%}%>
+
+
+<form action="/users/password-reset" method="POST">
+    <input type="password" name="old-password" placeholder="Old Password">
+    <input type="password" name="new-password" placeholder="New Password">
+    <input type="password" name="confirm-password" placeholder="Confirm Password">
+    <button>Reset Password</button>
+</form>

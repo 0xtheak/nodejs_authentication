@@ -7,6 +7,8 @@ const MongoStore = require('connect-mongo');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
+const passportJWT = require('./config/passport-jwt-strategy');
 
 
 app.use(expressLayouts);
@@ -31,7 +33,7 @@ app.use(session({
     store : MongoStore.create(
         {
             mongoUrl : 'mongodb://127.0.0.1:27017/authentication_development',
-        autoRemove : 'disabled'
+            autoRemove : 'disabled'
      },
      function(err){
         if(err){
@@ -42,6 +44,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use(passport.setAuthenticatedUser);
 
 app.use('/', require('./routes'));
 

@@ -8,7 +8,6 @@ const userSchema = new mongoose.Schema({
     },
     LastName : {
         type : String,
-        required : true
     },
 
     email : {
@@ -24,6 +23,6 @@ const userSchema = new mongoose.Schema({
     timestamps : true
 });
 
-const user = mongoose.model('user', userSchema);
+const User = mongoose.model('user', userSchema);
 
-module.exports = user;
+module.exports = User;
